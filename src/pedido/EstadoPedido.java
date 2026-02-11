@@ -1,5 +1,6 @@
-public class EstadoPedido {
-    public static void main(String[] args) throws Exception {
-        System.out.println("Esto es una  prueba 3");
-    }
+public enum EstadoPedido {
+    EN_PREPARACION,
+    LISTO_PARA_ENTREGAR,
+    ENTREGADO
 }
+
