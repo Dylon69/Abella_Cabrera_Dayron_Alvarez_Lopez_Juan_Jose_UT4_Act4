@@ -18,6 +18,7 @@ public class Main {
         System.out.println("Total a pagar: " + p2.calcularTotal() + "€");
         System.out.println("Estado: " + p2.getestado());
 
+        //Pruebas adicionales
 
         System.out.println("\n=== PRUEBA 1: Máximo 5 artículos ===");
         Pedido pedido1 = new Pedido("Ana");
@@ -55,5 +56,5 @@ public class Main {
         System.out.println("Total esperado: 32.5");
         System.out.println("Total calculado: " + pedido3.calcularTotal());
     }
-    }
 }
+
