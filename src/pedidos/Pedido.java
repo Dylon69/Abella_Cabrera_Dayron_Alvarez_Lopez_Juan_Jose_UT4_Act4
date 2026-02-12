@@ -41,4 +41,22 @@ public class Pedido {
     public int getNumArticulos() { return numArticulos; }
 
     public void setEstado(EstadoPedido estado) { this.estado = estado; }
+
+
+    public void mostrarResumen() {
+        System.out.println("----- RESUMEN DEL PEDIDO -----");
+        System.out.println("ID Pedido: " + idPedido);
+        System.out.println("Cliente: " + nombreCliente);
+        System.out.println("Estado: " + estado);
+
+        System.out.println("\nArtículos:");
+        for (Articulo a : listaArticulos) {
+            if (a != null) {
+                System.out.println("- " + a.getNombre() +" | Cantidad: " + a.getCantidad() +" | Precio unidad: " + a.getPrecioUnidad());
+            }
+
+        System.out.println("\nTotal del pedido: " + calcularTotal() + " €");
+        System.out.println("--------------------------------");
+        }
+    }
 }

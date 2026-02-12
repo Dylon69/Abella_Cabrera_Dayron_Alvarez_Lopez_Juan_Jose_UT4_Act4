@@ -21,6 +21,7 @@ public class Articulo {
     public String getNombre() { return nombre; }
     public int getCantidad() { return cantidad; }
     public double getPrecioUnidad() { return precioUnidad; }
-    }
+
+}
 
 
