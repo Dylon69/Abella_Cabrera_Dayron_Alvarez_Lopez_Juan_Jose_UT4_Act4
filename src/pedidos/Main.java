@@ -55,6 +55,11 @@ public class Main {
 
         System.out.println("Total esperado: 32.5");
         System.out.println("Total calculado: " + pedido3.calcularTotal());
+
+        System.out.println("\n=== PRUEBA 4: Mostrar resumen ===");
+        pedido1.mostrarResumen(); 
+
+
     }
 }
 

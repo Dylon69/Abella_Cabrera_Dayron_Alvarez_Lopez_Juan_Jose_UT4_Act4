@@ -86,9 +86,8 @@ public class Pedido {
             if (a != null) {
                 System.out.println("- " + a.getNombre() +" | Cantidad: " + a.getCantidad() +" | Precio unidad: " + a.getPrecioUnidad());
             }
-
+        }
         System.out.println("\nTotal del pedido: " + calcularTotal() + " €");
         System.out.println("--------------------------------");
-        }
     }
 }
