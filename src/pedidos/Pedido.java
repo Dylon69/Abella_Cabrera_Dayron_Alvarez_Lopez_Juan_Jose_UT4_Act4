@@ -9,14 +9,29 @@ public class Pedido {
     private int numArticulos;
 
     public Pedido(String nombreCliente) {
+
+        if (nombreCliente == null || nombreCliente.trim().isEmpty()) {
+        throw new IllegalArgumentException("El nombre del cliente no puede estar vacío.");
+    }
         this.idPedido = contadorPedidos++;
         this.nombreCliente = nombreCliente;
         this.estado = EstadoPedido.EN_PREPARACION;
         this.listaArticulos = new Articulo[5];
         this.numArticulos = 0;
     }
+    
 
     public void agregarArticulo(String nombre, int cantidad, double precio) {
+        if (nombre == null || nombre.trim().isEmpty()) {
+            System.out.println("Error: el nombre del artículo no puede estar vacío.");
+            return;
+        }
+
+        if (numArticulos >= 5) {
+            System.out.println("Error: no se pueden añadir más de 5 artículos al pedido.");
+            return;
+        }
+           
         if (numArticulos < 5) {
             listaArticulos[numArticulos] = new Articulo(nombre, cantidad, precio);
             numArticulos++;
@@ -25,6 +40,23 @@ public class Pedido {
             System.out.println("No se pueden añadir más artículos.");
         }
     }
+
+    public void cambiarEstado(EstadoPedido nuevoEstado) {
+
+        if (nuevoEstado.ordinal() < estado.ordinal()) {
+            System.out.println("Error: no se puede retroceder el estado del pedido.");
+            return;
+        }
+
+        if (nuevoEstado == estado) {
+            System.out.println("El pedido ya está en ese estado.");
+            return;
+        }
+
+        estado = nuevoEstado;
+        System.out.println("Estado actualizado correctamente a: " + estado);
+    }
+
 
     public double calcularTotal() {
         double total = 0;
